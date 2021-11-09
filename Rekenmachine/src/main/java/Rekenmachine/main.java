@@ -5,7 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class main {
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
         //Postfix: 138*+
         //Infix: 1+1
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
@@ -15,8 +15,11 @@ public class main {
         String input = inputReader.readInput();
 
         System.out.println("_____________________________________");
-        Postfix postfix = context.getBean(Postfix.class);
-        System.out.println(postfix.calculate(input));
+//        Postfix postfix = context.getBean(Postfix.class);
+//        System.out.println(postfix.calculate(input));
+
+        Infix infix = context.getBean(Infix.class);
+        System.out.println(infix.calculate(input));
     }
 
 }

@@ -12,13 +12,11 @@ public class AppConfig {
         }
 
         @Bean
-        @Profile("postfix")
         public Postfix postfix() {
                 return new Postfix();
         }
 
         @Bean
-        @Profile("infix")
         public Infix infix() {
                 return new Infix();
         }
