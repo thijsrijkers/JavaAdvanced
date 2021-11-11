@@ -1,4 +1,5 @@
 package Rekenmachine;
+
 import org.springframework.context.annotation.Profile;
 
 import java.util.Stack;
@@ -7,34 +8,35 @@ import java.util.Stack;
 public class Postfix {
 
     public int calculate(String input) {
-        Stack<Integer> stack = new Stack<>();
+        Stack<Integer> answer = new Stack<>();
 
         for (char character: input.toCharArray())
         {
             if (Character.isDigit(character))
-                stack.push(character - '0');
+                answer.push(character - '0');
             else {
-                int x = stack.pop();
-                int y = stack.pop();
+                int right = answer.pop();
+                int left = answer.pop();
 
                 switch(character) {
                     case '+':
-                        stack.push(y + x);
+                        answer.push(left + right);
                         break;
                     case '-':
-                        stack.push(y - x);
+                        answer.push(left - right);
                         break;
                     case '*':
-                        stack.push(y * x);
+                        answer.push(left * right);
                         break;
                     case '/':
-                        stack.push(y / x);
+                        answer.push(left / right);
                         break;
                 }
 
             }
         }
-        return stack.pop();
+
+        return answer.pop();
     }
 
 }

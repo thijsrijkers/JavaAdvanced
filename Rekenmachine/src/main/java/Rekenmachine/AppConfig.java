@@ -1,7 +1,6 @@
 package Rekenmachine;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 
 @Configuration
 public class AppConfig {
@@ -19,5 +18,10 @@ public class AppConfig {
         @Bean
         public Infix infix() {
                 return new Infix();
+        }
+
+        @Bean
+        public ProfileHandler profileHandler() {
+                return new ProfileHandler();
         }
 }

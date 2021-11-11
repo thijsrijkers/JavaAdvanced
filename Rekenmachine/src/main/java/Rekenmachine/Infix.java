@@ -1,19 +1,37 @@
 package Rekenmachine;
 
 import org.springframework.context.annotation.Profile;
-import java.util.*;
 
 @Profile("infix")
 public class Infix {
 
-    public String calculate(String input) {
-        String[] outs = input.split("(?<=[-+*/\\(\\)])|(?=[-+*/\\(\\)])");
-        for (String element : outs)
-        {
-            System.out.println(element);
+    public Double calculate(String input) {
+        String[] inputArray = input.split("");
+        int iterator = 0;
+        double answer = Integer.valueOf(inputArray[iterator++]);
+
+        while (iterator < inputArray.length) {
+
+            String operator = inputArray[iterator++];
+            double valueForCalculation = Double.valueOf(inputArray[iterator++]);
+
+            switch (operator) {
+                case "*":
+                    answer = answer * valueForCalculation;
+                    break;
+                case "/":
+                    answer = answer / valueForCalculation;
+                    break;
+                case "+":
+                    answer = answer + valueForCalculation;
+                    break;
+                case "-":
+                    answer = answer - valueForCalculation;
+                    break;
+            }
         }
 
-        return "";
+        return answer;
     }
 
 }
