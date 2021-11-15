@@ -22,11 +22,9 @@ public class PostfixTest {
     @Test
     @DisplayName("Error testing of the calculate method in the Postfix class")
     void testingPostfixError() throws EmptyStackException {
-        Exception exception = assertThrows(EmptyStackException.class, () -> {
+        assertThrows(EmptyStackException.class, () -> {
             postfix.calculate("0+---1");
         });
-
-        assertEquals(exception.getClass(), EmptyStackException.class);
     }
 
     @Test
