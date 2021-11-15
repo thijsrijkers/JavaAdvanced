@@ -11,8 +11,8 @@ public class InputReader {
             String input = reader.readLine();
             return input;
         }
-        catch(Exception e) {
-            e.getStackTrace();
+        catch(Exception exception) {
+            exception.getStackTrace();
         }
 
         return "";
