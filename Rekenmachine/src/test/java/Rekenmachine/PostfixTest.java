@@ -35,25 +35,25 @@ public class PostfixTest {
 
 
     @Test
-    @DisplayName("Giving Postfix correct add calculation to return a double")
+    @DisplayName("Giving Postfix correct add calculation to return a int")
     void testingPostfixAddResponse() {
         assertEquals(2, postfix.calculate("11+"));
     }
 
     @Test
-    @DisplayName("Giving Postfix correct multiple calculation to return a double")
+    @DisplayName("Giving Postfix correct multiple calculation to return a int")
     void testingPostfixMultipleResponse() {
         assertEquals(1, postfix.calculate("11*"));
     }
 
     @Test
-    @DisplayName("Giving Postfix correct minus calculation to return a double")
+    @DisplayName("Giving Postfix correct minus calculation to return a int")
     void testingPostfixMinusResponse() {
         assertEquals(1, postfix.calculate("21-"));
     }
 
     @Test
-    @DisplayName("Giving Postfix correct divide calculation to return a double")
+    @DisplayName("Giving Postfix correct divide calculation to return a int")
     void testingPostfixDivideResponse() {
         assertEquals(2, postfix.calculate("42/"));
     }
