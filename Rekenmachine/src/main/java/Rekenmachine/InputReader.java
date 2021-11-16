@@ -12,9 +12,7 @@ public class InputReader {
             return input;
         }
         catch(Exception exception) {
-            exception.getStackTrace();
+            return exception.toString();
         }
-
-        return "";
     }
 }
