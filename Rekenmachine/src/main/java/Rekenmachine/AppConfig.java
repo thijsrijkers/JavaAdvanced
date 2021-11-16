@@ -1,4 +1,6 @@
 package Rekenmachine;
+import Rekenmachine.Beans.Infix;
+import Rekenmachine.Beans.Postfix;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

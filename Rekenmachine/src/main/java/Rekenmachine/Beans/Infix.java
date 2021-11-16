@@ -1,4 +1,4 @@
-package Rekenmachine;
+package Rekenmachine.Beans;
 
 import org.springframework.context.annotation.Profile;
 
@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Profile;
 public class Infix {
 
     public Double calculate(String input) {
-        String[] inputArray = input.split("");
+        String[] inputArray = input.split(" ");
         int iterator = 0;
         double answer = Integer.valueOf(inputArray[iterator++]);
 

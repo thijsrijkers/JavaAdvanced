@@ -1,4 +1,4 @@
-package Rekenmachine;
+package Rekenmachine.Beans;
 
 import org.springframework.context.annotation.Profile;
 
