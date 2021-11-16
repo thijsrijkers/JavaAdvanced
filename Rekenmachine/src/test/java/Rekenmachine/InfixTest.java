@@ -29,25 +29,25 @@ public class InfixTest {
     @Test
     @DisplayName("Giving Infix correct add calculation to return a double")
     void testingInfixAddResponse() {
-        assertEquals(2.0, infix.calculate("1+1"));
+        assertEquals(2.0, infix.calculate("1 + 1"));
     }
 
     @Test
     @DisplayName("Giving Infix correct multiple calculation to return a double")
     void testingInfixMultipleResponse() {
-        assertEquals(1.0, infix.calculate("1*1"));
+        assertEquals(1.0, infix.calculate("1 * 1"));
     }
 
     @Test
     @DisplayName("Giving Infix correct minus calculation to return a double")
     void testingInfixMinusResponse() {
-        assertEquals(1.0, infix.calculate("2-1"));
+        assertEquals(1.0, infix.calculate("2 - 1"));
     }
 
     @Test
     @DisplayName("Giving Infix correct divide calculation to return a double")
     void testingInfixDivideResponse() {
-        assertEquals(2.0, infix.calculate("4/2"));
+        assertEquals(2.0, infix.calculate("4 / 2"));
     }
 
 }
