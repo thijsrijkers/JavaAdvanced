@@ -12,6 +12,6 @@ public class RootConfig implements WebMvcConfigurer {
 
     @Override
     public void configureContentNegotiation(ContentNegotiationConfigurer contentNegotiationConfigurer) {
-        contentNegotiationConfigurer.defaultContentType(MediaType.APPLICATION_JSON);
+
     }
 }
