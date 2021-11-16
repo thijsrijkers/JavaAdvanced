@@ -14,8 +14,7 @@ public class InfixTest {
 
     @BeforeEach
     void setUp() {
-        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-        this.infix = context.getBean(Infix.class);
+        this.infix = new Infix();
     }
 
     @Test

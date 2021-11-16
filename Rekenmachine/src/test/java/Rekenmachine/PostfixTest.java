@@ -16,8 +16,7 @@ public class PostfixTest {
 
     @BeforeEach
     void setUp() {
-        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-        this.postfix = context.getBean(Postfix.class);
+        this.postfix = new Postfix();
     }
 
     @Test
