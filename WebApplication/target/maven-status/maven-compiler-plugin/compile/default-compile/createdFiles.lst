@@ -1,3 +1,4 @@
 nl\stenden\javaminor\Configuration\Initializer.class
+nl\stenden\javaminor\Controller\AnimalController.class
 nl\stenden\javaminor\Configuration\RootConfig.class
 nl\stenden\javaminor\Controller\HelloWorldController.class
