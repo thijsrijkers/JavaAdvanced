@@ -4,6 +4,7 @@ import nl.stenden.javaminor.Model.Animal;
 
 import java.util.List;
 
+@Service
 public class AnimalService {
 
     private List<Animal> animals;
