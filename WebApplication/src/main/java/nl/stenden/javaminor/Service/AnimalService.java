@@ -1,44 +1,68 @@
 package nl.stenden.javaminor.Service;
 
 import nl.stenden.javaminor.Model.Animal;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.ArrayList;
 
 @Service
 public class AnimalService {
 
-    private List<Animal> animals;
+    private ArrayList<Animal> animals = new ArrayList<Animal>();
 
     public AnimalService(){
+        init();
+    }
+
+    private void init(){
         animals.add(new Animal(0,"dog"));
         animals.add(new Animal(1,"cat"));
         animals.add(new Animal(2,"hamster"));
     }
-
-    public List<Animal> getAnimals() {
+    public ArrayList<Animal> getAnimals() {
         return animals;
     }
 
-    public void create(Animal animal){
-        animals.add(new Animal(animals.get(animals.size()-1).getId() +1 ,animal.getName()));
+    public ResponseEntity<Animal> getAnimal(Integer id){
+        Animal animalFound = null;
+        for (Animal animal : getAnimals()) {
+            if (animal.getId() == id) {
+                animalFound = animal;
+                return ResponseEntity.ok(animalFound);
+            }
+        }
+        return (ResponseEntity<Animal>) ResponseEntity.status(HttpStatus.NOT_FOUND);
     }
 
-    public void update(Animal animalBody, Integer id){
+    public ResponseEntity.BodyBuilder create(Animal animal){
+        try {
+            animals.add(new Animal(animals.get(animals.size() - 1).getId() + 1, animal.getName()));
+            return ResponseEntity.ok();
+        }catch(Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    public ResponseEntity.BodyBuilder update(Animal animalBody, Integer id){
         for (Animal animal : animals) {
             if (animal.getId() == id) {
                 animal.setName(animalBody.getName());
-                break;
+                return ResponseEntity.ok();
             }
         }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND);
     }
 
-    public void delete(Integer id){
+    public ResponseEntity.BodyBuilder delete(Integer id){
         for (Animal animal : animals) {
             if (animal.getId() == id){
                 animals.remove(animal);
-                break;
+                return ResponseEntity.ok();
             }
         }
 
+        return ResponseEntity.status(HttpStatus.NOT_FOUND);
     }
 }

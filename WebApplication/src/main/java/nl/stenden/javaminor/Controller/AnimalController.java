@@ -28,31 +28,22 @@ public class AnimalController {
     @GetMapping("/{id}")
     @ResponseBody
     public ResponseEntity<Animal> getAnimal(@PathVariable("id") final Integer id){
-        Animal animalFound = null;
-        for (Animal animal : service.getAnimals()) {
-            if (animal.getId() == id) {
-                animalFound = animal;
-            }
-        }
-        return ResponseEntity.ok(animalFound);
+        return service.getAnimal(id);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity.BodyBuilder postAnimal(@Valid @RequestBody Animal animalBody){
-        service.create(animalBody);
-        return ResponseEntity.ok();
+        return service.create(animalBody);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity.BodyBuilder putAnimal(@PathVariable("id") final Integer id, @Valid @RequestBody Animal animalBody){
-        service.update(animalBody, id);
-        return ResponseEntity.ok();
+        return service.update(animalBody, id);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity.BodyBuilder deleteAnimal(@PathVariable("id") final Integer id){
-        service.delete(id);
-        return ResponseEntity.ok();
+        return service.delete(id);
     }
 }
