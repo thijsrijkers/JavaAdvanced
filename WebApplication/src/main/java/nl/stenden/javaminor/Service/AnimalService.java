@@ -17,9 +17,15 @@ public class AnimalService {
     }
 
     private void init(){
-        animals.add(new Animal(0,"dog"));
-        animals.add(new Animal(1,"cat"));
-        animals.add(new Animal(2,"hamster"));
+        Animal dog = new Animal();
+        dog.setId(0);
+        dog.setName("dog");
+        animals.add(dog);
+
+        Animal cat = new Animal();
+        cat.setId(1);
+        cat.setName("cat");
+        animals.add(cat);
     }
     public ArrayList<Animal> getAnimals() {
         return animals;
@@ -38,7 +44,10 @@ public class AnimalService {
 
     public ResponseEntity.BodyBuilder create(Animal animal){
         try {
-            animals.add(new Animal(animals.get(animals.size() - 1).getId() + 1, animal.getName()));
+            Animal newAnimal = new Animal();
+            newAnimal.setId(animals.get(animals.size() - 1).getId() + 1);
+            newAnimal.setName(animal.getName());
+            animals.add(newAnimal);
             return ResponseEntity.ok();
         }catch(Exception e){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR);

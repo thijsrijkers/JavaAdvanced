@@ -8,9 +8,8 @@ public class Animal {
     @NotBlank
     private String name;
 
-    public Animal(int id, String name) {
-        this.id = id;
-        this.name = name;
+    public Animal() {
+
     }
 
     public int getId() {

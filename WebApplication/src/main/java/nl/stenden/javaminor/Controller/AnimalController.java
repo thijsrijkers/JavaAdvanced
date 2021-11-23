@@ -33,17 +33,20 @@ public class AnimalController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public ResponseEntity.BodyBuilder postAnimal(@Valid @RequestBody Animal animalBody){
-        return service.create(animalBody);
+    public ResponseEntity<Void> postAnimal(@Valid @RequestBody Animal animalBody){
+        service.create(animalBody);
+        return ResponseEntity.noContent().build();
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity.BodyBuilder putAnimal(@PathVariable("id") final Integer id, @Valid @RequestBody Animal animalBody){
-        return service.update(animalBody, id);
+    public ResponseEntity<Void> putAnimal(@PathVariable("id") final Integer id, @Valid @RequestBody Animal animalBody){
+        service.update(animalBody, id);
+        return ResponseEntity.noContent().build();
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity.BodyBuilder deleteAnimal(@PathVariable("id") final Integer id){
-        return service.delete(id);
+    public ResponseEntity<Void> deleteAnimal(@PathVariable("id") final Integer id){
+        service.delete(id);
+        return ResponseEntity.noContent().build();
     }
 }
