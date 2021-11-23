@@ -14,7 +14,7 @@ public class AnimalRepository {
     @PersistenceContext
     private EntityManager manager;
 
-    public List getAnimals(){
+    public List<Animal> getAnimals(){
         TypedQuery<Animal> query = manager.createQuery("SELECT a FROM Animal a", Animal.class);
         return query.getResultList();
     }
