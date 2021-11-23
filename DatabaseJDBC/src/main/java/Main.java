@@ -5,8 +5,7 @@ import java.sql.*;
 public class Main {
     public static void main(String[] args){
 
-        try {
-            Connection connection =DriverManager.getConnection("jdbc:mysql://localhost/databasejdbc?user=root");
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/databasejdbc?user=root")){
             System.out.println("Connection maded");
 
             System.out.println("Write DB entry:");
@@ -22,7 +21,8 @@ public class Main {
                 System.out.println(result.getString("productNaam"));
             }
 
-            connection.close();
+            statement.close();
+            result.close();
 
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
