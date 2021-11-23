@@ -1,18 +1,22 @@
 package nl.stenden.javaminor.Service;
 
 import nl.stenden.javaminor.Model.Animal;
+import nl.stenden.javaminor.Repository.AnimalRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class AnimalService {
 
     private ArrayList<Animal> animals = new ArrayList<Animal>();
+    private final AnimalRepository animalRepository;
 
-    public AnimalService(){
+    public AnimalService(AnimalRepository animalRepository){
+        this.animalRepository = animalRepository;
         init();
     }
 
@@ -27,20 +31,21 @@ public class AnimalService {
         cat.setName("cat");
         animals.add(cat);
     }
-    public ArrayList<Animal> getAnimals() {
-        return animals;
-    }
 
-    public ResponseEntity<Animal> getAnimal(Integer id){
-        Animal animalFound = null;
-        for (Animal animal : getAnimals()) {
-            if (animal.getId() == id) {
-                animalFound = animal;
-                return ResponseEntity.ok(animalFound);
-            }
-        }
-        return (ResponseEntity<Animal>) ResponseEntity.status(HttpStatus.NOT_FOUND);
+    public List getAnimals() {
+        return animalRepository.getAnimals();
     }
+//
+//    public ResponseEntity<Animal> getAnimal(Integer id){
+//        Animal animalFound = null;
+//        for (Animal animal : getAnimals()) {
+//            if (animal.getId() == id) {
+//                animalFound = animal;
+//                return ResponseEntity.ok(animalFound);
+//            }
+//        }
+//        return (ResponseEntity<Animal>) ResponseEntity.status(HttpStatus.NOT_FOUND);
+//    }
 
     public ResponseEntity.BodyBuilder create(Animal animal){
         try {

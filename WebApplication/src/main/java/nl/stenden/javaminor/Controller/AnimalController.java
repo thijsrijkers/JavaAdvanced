@@ -25,11 +25,11 @@ public class AnimalController {
         return ResponseEntity.ok(service.getAnimals());
     }
 
-    @GetMapping("/{id}")
-    @ResponseBody
-    public ResponseEntity<Animal> getAnimal(@PathVariable("id") final Integer id){
-        return service.getAnimal(id);
-    }
+//    @GetMapping("/{id}")
+//    @ResponseBody
+//    public ResponseEntity<Animal> getAnimal(@PathVariable("id") final Integer id){
+//        return service.getAnimal(id);
+//    }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody

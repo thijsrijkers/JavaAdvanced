@@ -1,6 +1,8 @@
 nl\stenden\javaminor\Configuration\Initializer.class
 nl\stenden\javaminor\Controller\AnimalController.class
+nl\stenden\javaminor\Repository\AnimalRepository.class
 nl\stenden\javaminor\Configuration\RootConfig.class
+nl\stenden\javaminor\Model\Animal.class
+nl\stenden\javaminor\Configuration\DatabaseConfig.class
 nl\stenden\javaminor\Service\AnimalService.class
 nl\stenden\javaminor\Controller\HelloWorldController.class
-nl\stenden\javaminor\Model\Animal.class
