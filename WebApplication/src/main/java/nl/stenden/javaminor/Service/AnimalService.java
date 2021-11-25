@@ -35,28 +35,13 @@ public class AnimalService {
     public List getAnimals() {
         return animalRepository.getAnimals();
     }
-//
-//    public ResponseEntity<Animal> getAnimal(Integer id){
-//        Animal animalFound = null;
-//        for (Animal animal : getAnimals()) {
-//            if (animal.getId() == id) {
-//                animalFound = animal;
-//                return ResponseEntity.ok(animalFound);
-//            }
-//        }
-//        return (ResponseEntity<Animal>) ResponseEntity.status(HttpStatus.NOT_FOUND);
-//    }
 
-    public ResponseEntity.BodyBuilder create(Animal animal){
-        try {
-            Animal newAnimal = new Animal();
-            newAnimal.setId(animals.get(animals.size() - 1).getId() + 1);
-            newAnimal.setName(animal.getName());
-            animals.add(newAnimal);
-            return ResponseEntity.ok();
-        }catch(Exception e){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public List getAnimal(Integer id){
+        return animalRepository.getAnimal(id);
+    }
+
+    public void create(Animal animal){
+        animalRepository.postAnimals(animal);
     }
 
     public ResponseEntity.BodyBuilder update(Animal animalBody, Integer id){
@@ -69,14 +54,7 @@ public class AnimalService {
         return ResponseEntity.status(HttpStatus.NOT_FOUND);
     }
 
-    public ResponseEntity.BodyBuilder delete(Integer id){
-        for (Animal animal : animals) {
-            if (animal.getId() == id){
-                animals.remove(animal);
-                return ResponseEntity.ok();
-            }
-        }
-
-        return ResponseEntity.status(HttpStatus.NOT_FOUND);
+    public void delete(Integer id){
+        animalRepository.deleteAnimals(id);
     }
 }

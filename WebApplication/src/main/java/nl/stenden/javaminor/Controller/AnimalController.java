@@ -25,17 +25,17 @@ public class AnimalController {
         return ResponseEntity.ok(service.getAnimals());
     }
 
-//    @GetMapping("/{id}")
-//    @ResponseBody
-//    public ResponseEntity<Animal> getAnimal(@PathVariable("id") final Integer id){
-//        return service.getAnimal(id);
-//    }
+    @GetMapping("/{id}")
+    @ResponseBody
+    public ResponseEntity<List<Animal>> getAnimal(@PathVariable("id") final Integer id){
+        return ResponseEntity.ok(service.getAnimal(id));
+    }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<Void> postAnimal(@Valid @RequestBody Animal animalBody){
         service.create(animalBody);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok().build();
     }
 
     @PutMapping("/{id}")
@@ -47,6 +47,6 @@ public class AnimalController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteAnimal(@PathVariable("id") final Integer id){
         service.delete(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok().build();
     }
 }
