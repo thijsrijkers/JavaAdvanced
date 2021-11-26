@@ -44,14 +44,8 @@ public class AnimalService {
         animalRepository.postAnimals(animal);
     }
 
-    public ResponseEntity.BodyBuilder update(Animal animalBody, Integer id){
-        for (Animal animal : animals) {
-            if (animal.getId() == id) {
-                animal.setName(animalBody.getName());
-                return ResponseEntity.ok();
-            }
-        }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND);
+    public void update(Animal animalBody, Integer id){
+        animalRepository.putAnimals(animalBody, id);
     }
 
     public void delete(Integer id){

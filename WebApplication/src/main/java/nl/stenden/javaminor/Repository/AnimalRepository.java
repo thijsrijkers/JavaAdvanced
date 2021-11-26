@@ -27,19 +27,21 @@ public class AnimalRepository {
         return query.getResultList();
     }
 
-    public List<Animal> postAnimals(Animal animal){
-        TypedQuery<Animal> query = manager.createQuery("INSERT INTO Animal (name) VALUES ("+animal.getName()+")", Animal.class);
-        return query.getResultList();
+    @Transactional
+    public Animal postAnimals(Animal animal){
+        manager.persist(animal);
+        return manager.find(Animal.class, animal.getId());
     }
 
-    public List<Animal> putAnimals(){
-        TypedQuery<Animal> query = manager.createQuery("SELECT a FROM Animal a", Animal.class);
-        return query.getResultList();
+    @Transactional
+    public void putAnimals(Animal animal, int id){
+        Animal update = manager.find(Animal.class, id);
+        update.setName(animal.getName());
     }
 
+    @Transactional
     public void deleteAnimals(int id){
-        Query query = manager.createNativeQuery("DELETE FROM Animal AS a WHERE a.id = :id");
-        query.setParameter("id", id);
-        query.executeUpdate();
+        Animal animal = manager.find(Animal.class, id);
+        manager.remove(animal);
     }
 }
