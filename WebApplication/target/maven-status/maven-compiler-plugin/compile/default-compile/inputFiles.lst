@@ -1,8 +1,13 @@
 C:\Users\thijs\Desktop\School\JavaAdvanced\JavaAdvanced\JavaAdvanced\Webapplication\src\main\java\nl\stenden\javaminor\Configuration\Initializer.java
-C:\Users\thijs\Desktop\School\JavaAdvanced\JavaAdvanced\JavaAdvanced\Webapplication\src\main\java\nl\stenden\javaminor\Service\AnimalService.java
+C:\Users\thijs\Desktop\School\JavaAdvanced\JavaAdvanced\JavaAdvanced\Webapplication\src\main\java\nl\stenden\javaminor\Repository\OwnerRepository.java
 C:\Users\thijs\Desktop\School\JavaAdvanced\JavaAdvanced\JavaAdvanced\Webapplication\src\main\java\nl\stenden\javaminor\Configuration\DatabaseConfig.java
 C:\Users\thijs\Desktop\School\JavaAdvanced\JavaAdvanced\JavaAdvanced\Webapplication\src\main\java\nl\stenden\javaminor\Repository\AnimalRepository.java
-C:\Users\thijs\Desktop\School\JavaAdvanced\JavaAdvanced\JavaAdvanced\Webapplication\src\main\java\nl\stenden\javaminor\Controller\AnimalController.java
+C:\Users\thijs\Desktop\School\JavaAdvanced\JavaAdvanced\JavaAdvanced\Webapplication\src\main\java\nl\stenden\javaminor\Controller\HandlerOfExceptions.java
 C:\Users\thijs\Desktop\School\JavaAdvanced\JavaAdvanced\JavaAdvanced\Webapplication\src\main\java\nl\stenden\javaminor\Configuration\RootConfig.java
 C:\Users\thijs\Desktop\School\JavaAdvanced\JavaAdvanced\JavaAdvanced\Webapplication\src\main\java\nl\stenden\javaminor\Model\Animal.java
 C:\Users\thijs\Desktop\School\JavaAdvanced\JavaAdvanced\JavaAdvanced\Webapplication\src\main\java\nl\stenden\javaminor\Controller\HelloWorldController.java
+C:\Users\thijs\Desktop\School\JavaAdvanced\JavaAdvanced\JavaAdvanced\Webapplication\src\main\java\nl\stenden\javaminor\Service\OwnerService.java
+C:\Users\thijs\Desktop\School\JavaAdvanced\JavaAdvanced\JavaAdvanced\Webapplication\src\main\java\nl\stenden\javaminor\Controller\OwnerController.java
+C:\Users\thijs\Desktop\School\JavaAdvanced\JavaAdvanced\JavaAdvanced\Webapplication\src\main\java\nl\stenden\javaminor\Service\AnimalService.java
+C:\Users\thijs\Desktop\School\JavaAdvanced\JavaAdvanced\JavaAdvanced\Webapplication\src\main\java\nl\stenden\javaminor\Controller\AnimalController.java
+C:\Users\thijs\Desktop\School\JavaAdvanced\JavaAdvanced\JavaAdvanced\Webapplication\src\main\java\nl\stenden\javaminor\Model\Owner.java

@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.List;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,19 +27,19 @@ public class AnimalRepository {
     }
 
     @Transactional
-    public Animal postAnimals(Animal animal){
+    public Animal postAnimal(Animal animal){
         manager.persist(animal);
         return manager.find(Animal.class, animal.getId());
     }
 
     @Transactional
-    public void putAnimals(Animal animal, int id){
+    public void putAnimal(Animal animal, int id){
         Animal update = manager.find(Animal.class, id);
         update.setName(animal.getName());
     }
 
     @Transactional
-    public void deleteAnimals(int id){
+    public void deleteAnimal(int id){
         Animal animal = manager.find(Animal.class, id);
         manager.remove(animal);
     }

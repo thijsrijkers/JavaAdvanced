@@ -15,8 +15,19 @@ public class Animal {
     @Column(name = "name")
     private String name;
 
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "owner_id", nullable = false)
+    private Owner owner;
+
     public Animal() {
 
+    }
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
     }
 
     public int getId() {
