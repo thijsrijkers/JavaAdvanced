@@ -1,7 +1,11 @@
 package nl.stenden.javaminor.Repository;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import nl.stenden.javaminor.Model.Owner;
 import nl.stenden.javaminor.config.TestApplicationConfig;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,24 +30,47 @@ public class OwnerRepositoryTest {
     @Autowired
     private OwnerRepository ownerRepository;
 
+    private Owner ownerTemp;
+
+    @BeforeEach
+    void setUp() {
+        this.ownerTemp = new Owner();
+        ownerTemp.setName("TobiasVanArkelen");
+    }
+
     @Test
+    @DisplayName("Testing if getOwners() returns a list of owners")
     public void testMethodGetOwners() {
         List<Owner> owners = ownerRepository.getOwners();
-        System.out.println("=========================");
-        for (Owner owner : owners)
-        {
-            System.out.println(owner.getName());
-        }
-        System.out.println("=========================");
         assertNotNull(owners);
     }
 
     @Test
+    @DisplayName("Testing if getOwner retrieves the right owner")
     public void testMethodGetOwner() {
         List<Owner> owner = ownerRepository.getOwner(1);
-        System.out.println("=========================");
-        System.out.println(owner.get(0).getName());
-        System.out.println("=========================");
-        assertNotNull(owner);
+        assertEquals("tom", owner.get(0).getName());
     }
+
+    @Test
+    @DisplayName("Testing if postOwner has posted the right owner")
+    public void testMethodPostOwner() {
+        Owner owner = ownerRepository.postOwner(this.ownerTemp);
+        assertEquals("TobiasVanArkelen", owner.getName());
+    }
+
+    @Test
+    @DisplayName("Testing if putOwner changed the entry")
+    public void testMethodPutOwner() {
+        ownerRepository.putOwner(this.ownerTemp, 1);
+        List<Owner> owner = ownerRepository.getOwner(1);
+        assertEquals("TobiasVanArkelen", owner.get(0).getName());
+    }
+
+    @Test
+    @DisplayName("Testing if deleteOwner works")
+    public void testMethodDeleteOwner() {
+        ownerRepository.deleteOwner(1);
+    }
+
 }

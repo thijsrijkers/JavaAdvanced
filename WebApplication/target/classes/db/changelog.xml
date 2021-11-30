@@ -19,8 +19,21 @@
             <column name="name" type="varchar(255)"/>
         </createTable>
 
+        <createTable tableName="animal">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)"/>
+            <column name="owner_id" type="int"/>
+        </createTable>
+
         <loadData tableName="owner" file="db/owner.csv">
             <column header="name" name="name" type="STRING"/>
+        </loadData>
+
+        <loadData tableName="animal" file="db/animal.csv">
+            <column header="name" name="name" type="STRING"/>
+            <column header="owner_id" name="owner_id"/>
         </loadData>
 
     </changeSet>
