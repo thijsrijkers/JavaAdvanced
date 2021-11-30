@@ -25,14 +25,7 @@ public class TestApplicationConfig {
 
     @Bean(name = "dataSource")
     public DataSource dataSource(){
-        EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
-        return builder.setType(EmbeddedDatabaseType.H2).build();
-//        DriverManagerDataSource ds = new DriverManagerDataSource();
-//        ds.setDriverClassName("org.h2.Driver");
-//        ds.setUrl("jdbc:h2:mem:unit-testing-jpa;DB_CLOSE_DELAY=-1;");
-//        ds.setUsername("root");
-//        ds.setPassword("");
-//        return ds;
+        return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).build();
     }
 
     @Bean

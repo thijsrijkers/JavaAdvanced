@@ -18,6 +18,10 @@
             </column>
             <column name="name" type="varchar(255)"/>
         </createTable>
-    </changeSet>
 
+        <loadData tableName="owner" file="db/owner.csv">
+            <column header="name" name="name" type="STRING"/>
+        </loadData>
+
+    </changeSet>
 </databaseChangeLog>

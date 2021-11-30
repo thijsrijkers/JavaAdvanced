@@ -9,10 +9,13 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import static java.lang.System.in;
 import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
 @ExtendWith(SpringExtension.class)
@@ -24,10 +27,23 @@ public class OwnerRepositoryTest {
     private OwnerRepository ownerRepository;
 
     @Test
-    public void testMethodGetOwnersResponse() {
-        Collection<Owner> owners = ownerRepository.getOwners();
-        System.out.println("==========================");
-        System.out.println(owners);
-        System.out.println("==========================");
+    public void testMethodGetOwners() {
+        List<Owner> owners = ownerRepository.getOwners();
+        System.out.println("=========================");
+        for (Owner owner : owners)
+        {
+            System.out.println(owner.getName());
+        }
+        System.out.println("=========================");
+        assertNotNull(owners);
+    }
+
+    @Test
+    public void testMethodGetOwner() {
+        List<Owner> owner = ownerRepository.getOwner(1);
+        System.out.println("=========================");
+        System.out.println(owner.get(0).getName());
+        System.out.println("=========================");
+        assertNotNull(owner);
     }
 }

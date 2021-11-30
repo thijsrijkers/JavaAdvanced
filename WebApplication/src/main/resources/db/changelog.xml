@@ -19,9 +19,9 @@
             <column name="name" type="varchar(255)"/>
         </createTable>
 
-        <insert tableName="owner">
-            <column name="id">12</column>
-            <column name="name">thijs</column>
-        </insert>
+        <loadData tableName="owner" file="db/owner.csv">
+            <column header="name" name="name" type="STRING"/>
+        </loadData>
+
     </changeSet>
 </databaseChangeLog>
