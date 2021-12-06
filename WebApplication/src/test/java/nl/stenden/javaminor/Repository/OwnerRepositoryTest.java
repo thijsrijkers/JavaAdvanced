@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import nl.stenden.javaminor.Model.Owner;
 import nl.stenden.javaminor.config.TestApplicationConfig;
+import nl.stenden.javaminor.dto.OwnerDTO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

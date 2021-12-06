@@ -2,6 +2,7 @@ package nl.stenden.javaminor.Service;
 
 import nl.stenden.javaminor.Model.Owner;
 import nl.stenden.javaminor.Repository.OwnerRepository;
+import nl.stenden.javaminor.dto.OwnerDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

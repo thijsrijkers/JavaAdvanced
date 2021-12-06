@@ -2,6 +2,7 @@ package nl.stenden.javaminor.Controller;
 
 import nl.stenden.javaminor.Model.Owner;
 import nl.stenden.javaminor.Service.OwnerService;
+import nl.stenden.javaminor.dto.OwnerDTO;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

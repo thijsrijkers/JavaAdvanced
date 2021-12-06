@@ -1,6 +1,7 @@
 nl\stenden\javaminor\Configuration\Initializer.class
 nl\stenden\javaminor\Controller\AnimalController.class
 nl\stenden\javaminor\Controller\OwnerController.class
+nl\stenden\javaminor\dto\AnimalDTO.class
 nl\stenden\javaminor\Repository\AnimalRepository.class
 nl\stenden\javaminor\Service\OwnerService.class
 nl\stenden\javaminor\Service\AnimalService.class
@@ -9,6 +10,7 @@ nl\stenden\javaminor\Controller\HandlerOfExceptions$ErrorMessage.class
 nl\stenden\javaminor\Model\Owner.class
 nl\stenden\javaminor\Configuration\RootConfig.class
 nl\stenden\javaminor\Controller\HandlerOfExceptions.class
+nl\stenden\javaminor\dto\OwnerDTO.class
 nl\stenden\javaminor\Model\Animal.class
 nl\stenden\javaminor\Configuration\DatabaseConfig.class
 nl\stenden\javaminor\Repository\OwnerRepository.class

@@ -1,6 +1,7 @@
 package nl.stenden.javaminor.Repository;
 
 import nl.stenden.javaminor.Model.Owner;
+import nl.stenden.javaminor.dto.OwnerDTO;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
