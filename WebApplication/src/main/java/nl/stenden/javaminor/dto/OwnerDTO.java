@@ -14,9 +14,6 @@ public class OwnerDTO {
     @NotBlank
     @Getter @Setter private String name;
 
-    @NotNull
-    @Getter @Setter private Owner owner;
-
 
     public OwnerDTO() {
 
