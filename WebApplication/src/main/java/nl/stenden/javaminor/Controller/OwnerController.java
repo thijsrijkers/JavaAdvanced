@@ -22,13 +22,13 @@ public class OwnerController {
 
     @GetMapping
     @ResponseBody
-    public ResponseEntity<List<Owner>> getOwners(){
+    public ResponseEntity<List<OwnerDTO>> getOwners(){
         return ResponseEntity.ok(service.getOwners());
     }
 
     @GetMapping("/{id}")
     @ResponseBody
-    public ResponseEntity<List<Owner>> getOwner(@PathVariable("id") final Integer id){
+    public ResponseEntity<OwnerDTO> getOwner(@PathVariable("id") final Integer id){
         return ResponseEntity.ok(service.getOwner(id));
     }
 

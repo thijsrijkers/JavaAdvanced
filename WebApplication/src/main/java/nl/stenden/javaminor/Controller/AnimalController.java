@@ -2,6 +2,7 @@ package nl.stenden.javaminor.Controller;
 
 import nl.stenden.javaminor.Model.Animal;
 import nl.stenden.javaminor.Service.AnimalService;
+import nl.stenden.javaminor.dto.AnimalDTO;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,13 +22,13 @@ public class AnimalController {
 
     @GetMapping
     @ResponseBody
-    public ResponseEntity<List<Animal>> getAnimals(){
+    public ResponseEntity<List<AnimalDTO>> getAnimals(){
         return ResponseEntity.ok(service.getAnimals());
     }
 
     @GetMapping("/{id}")
     @ResponseBody
-    public ResponseEntity<List<Animal>> getAnimal(@PathVariable("id") final Integer id){
+    public ResponseEntity<AnimalDTO> getAnimal(@PathVariable("id") final Integer id){
         return ResponseEntity.ok(service.getAnimal(id));
     }
 

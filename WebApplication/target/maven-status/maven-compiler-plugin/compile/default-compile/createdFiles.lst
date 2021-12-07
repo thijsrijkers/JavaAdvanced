@@ -1,4 +1,5 @@
 nl\stenden\javaminor\Configuration\Initializer.class
+nl\stenden\javaminor\ConvertToDTO.class
 nl\stenden\javaminor\Controller\AnimalController.class
 nl\stenden\javaminor\Controller\OwnerController.class
 nl\stenden\javaminor\dto\AnimalDTO.class
