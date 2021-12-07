@@ -7,6 +7,8 @@ import nl.stenden.javaminor.config.TestApplicationControllerConfig;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -30,7 +32,7 @@ public class AnimalControllerTest {
 
     @Test
     public void testGetAnimals() throws Exception {
-        mockMvc.perform(get("/animals"))
+        mockMvc.perform(get("/animals").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andReturn();
     }
@@ -43,6 +45,7 @@ public class AnimalControllerTest {
     }
 
     @Test
+    @DirtiesContext
     public void testDeleteAnimal() throws Exception {
         mockMvc.perform(delete("/animals/1"))
                 .andExpect(status().isOk())
@@ -53,6 +56,8 @@ public class AnimalControllerTest {
     public void testPostAnimal() throws Exception {
         Animal animal = new Animal();
         Owner owner = new Owner();
+        owner.setId(1);
+        owner.setName("tim");
         animal.setName("TestAnimal");
         animal.setOwner(owner);
 

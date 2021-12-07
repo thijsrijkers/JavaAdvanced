@@ -6,6 +6,7 @@ import nl.stenden.javaminor.config.TestApplicationControllerConfig;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -42,6 +43,7 @@ public class OwnerControllerTest {
     }
 
     @Test
+    @DirtiesContext
     public void testDeleteOwner() throws Exception {
         mockMvc.perform(delete("/owners/1"))
                 .andExpect(status().isOk())
@@ -53,7 +55,7 @@ public class OwnerControllerTest {
         Owner owner = new Owner();
         owner.setName("TestOwner");
 
-        mockMvc.perform(post("/Owners")
+        mockMvc.perform(post("/owners")
                         .content(new ObjectMapper().writeValueAsString(owner))
                         .contentType("application/json"))
                 .andExpect(status().isOk())
